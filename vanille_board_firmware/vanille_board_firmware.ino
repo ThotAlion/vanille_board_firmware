@@ -64,6 +64,7 @@ void loop() {
   // lecture du BNO
   sensors_event_t orientationData;
   bno.getEvent(&orientationData, Adafruit_BNO055::VECTOR_EULER);
+  imu::Quaternion quat = bno.getQuat();
   uint16_t angleRawFRX;
   bool errorFRX;
   angleRawFRX = magAlphaFRX.readAngleRaw(&errorFRX);
@@ -79,6 +80,14 @@ void loop() {
       Serial.print((float)orientationData.orientation.z);
       Serial.print(",\"Z\":");
       Serial.print((float)orientationData.orientation.x);
+      Serial.print("},\"QUAT\":{\"W\":");
+      Serial.print((float)quat.w());
+      Serial.print(",\"X\":");
+      Serial.print((float)quat.x());
+      Serial.print(",\"Y\":");
+      Serial.print((float)quat.y());
+      Serial.print(",\"Z\":");
+      Serial.print((float)quat.z());
       Serial.print("},\"FRX\":{\"V\":");
       Serial.print(angleRawFRX);
       Serial.print(",\"B\":");
@@ -99,6 +108,14 @@ void loop() {
       Serial1.print((float)orientationData.orientation.z);
       Serial1.print(",\"Z\":");
       Serial1.print((float)orientationData.orientation.x);
+      Serial1.print("},\"QUAT\":{\"W\":");
+      Serial1.print((float)quat.w());
+      Serial1.print(",\"X\":");
+      Serial1.print((float)quat.x());
+      Serial1.print(",\"Y\":");
+      Serial1.print((float)quat.y());
+      Serial1.print(",\"Z\":");
+      Serial1.print((float)quat.z());
       Serial1.print("},\"FRX\":{\"V\":");
       Serial1.print(angleRawFRX);
       Serial1.print(",\"B\":");
