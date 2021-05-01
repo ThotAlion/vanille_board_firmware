@@ -2,7 +2,7 @@
 
 The Vanille robot is a quadruped DIY made with 12DOF brushless motors controlled by Tinymovr cards.
 
-![](./images/IMG_3785.jpg)![](./images/IMG_3828.jpg)![](./images/IMG_3968.jpg)
+![](./images/IMG_3785.JPG)![](./images/IMG_3828.JPG)![](./images/IMG_3968.JPG)
 
 The Tinymovr gives access to a great quantity of sensors (relative position very accurate, speed, equivalent current - torque, temperature of the boards...) but they are not sufficient. In this robot we identified this sensors to add :
 
