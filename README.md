@@ -20,7 +20,9 @@ To guess the zero of the motors, we have several solutions :
 - Finally, over 12 degrees of freedom, you can choose a bit all of the previous solutions. Considering one leg, there are the articulations hip-x, hip-y and knee-y. If you do not know the hip-x angle, reaching the mechanical stops can be very dangerous since the robot can lie on ground. Knowing this angle by an absolute encoder is very useful. On the hip-y and knee-y, it could be also useful but you have to run a cable to the absolute sensors. In such a mechanical architecture, the robot shall have light legs and makes very dynamic moves. The method using mechanical stops can then be more reliable.
 
 The absolute magnetic encoders chosen are the same used by Tinymovr board : the [MA702 of Monolithicpower](https://www.monolithicpower.com/en/ma702.html) It is magnetic encoder giving the accurate absolute angle of a magnet turning in front from 0 (0deg) to 65535(360deg). 
+
 ![](https://www.mev-elektronik.com/isotope/m/maxxx_sideshaft.jpg)
+
 The data is sent via SPI bus. If there are multiple MA702, plug them on the same SPI bus with different Chip select pins. The chip select is to be specified in the SPI master code. The default SPI frequency is 10MHz, as the wires shall be longs and the data packet is very small, do not hesitate to reduce the frequency to avoid noise. 10kHz is largely sufficient.
 
 Take care about magnet mounting, it shall be tunable ! As the absolute position is to be measured, the zero of the magnet shall not be inside the operational zone. It is possible to manage the discontinuity between 0 (0deg) and 65535(360deg) during runtime but not at initialization. The objective of this magnet is to remove ambiguity about "on which turn are we ?" If the zero is inside the operational zone, we are on two turns... impossible to guess at the beginning.
@@ -38,6 +40,7 @@ Giving the absolute angles of the main body of the robot needs an IMU. Finding t
 - [Bosch BNO055](https://www.gotronic.fr/art-module-9-dof-ada2472-23896.htm) : Is the same format of MPU6050 but far more robust, good accuracy and good reactivity. **The best tested for now.**
 
 The IMU chosen is then the BNO055.
+
 ![](https://ae01.alicdn.com/kf/HTB17PfxKbGYBuNjy0Foq6AiBFXam.jpg)
 
 ## Sensor board
