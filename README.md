@@ -44,6 +44,8 @@ The IMU chosen is then the BNO055.
 
 The gather all the data to send to the main computation board (with ROS2) we can use a classical Arduino. To be at ease and have the ability to add future peripherals, the board chosen is [Arduino Nano Every](https://store.arduino.cc/arduino-nano-every) very simple and powerful.
 
+![](./images/IMG_3988.jpg)
+
 Library used :
 - For the [MA702](https://github.com/monolithicpower/MagAlpha-Arduino-Library)
 - For the [BNO055](https://github.com/adafruit/Adafruit_BNO055)
